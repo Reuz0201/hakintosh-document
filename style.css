@@ -1,0 +1,225 @@
+/* Основные стили страницы */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    margin: 0;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Заголовки */
+h1 {
+    color: #4a90e2;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+h2 {
+    color: #333;
+    font-size: 1.5em;
+    margin-bottom: 15px;
+}
+
+/* Область для ввода файлов */
+#fileInput {
+    display: none;
+}
+
+.file-label {
+    display: inline-block;
+    background-color: #4a90e2;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 1em;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.file-label:hover {
+    background-color: #357ab8;
+}
+
+/* Основная кнопка */
+button {
+    background-color: #4a90e2;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 1em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #357ab8;
+}
+
+/* Контейнер для кнопок */
+.button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px; /* Расстояние между кнопками */
+    margin-bottom: 20px;
+}
+
+/* Список файлов */
+ul {
+    list-style-type: none;
+    padding: 0;
+    max-width: 600px;
+    width: 100%;
+    margin-top: 0;
+}
+
+li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+}
+
+li:hover {
+    transform: scale(1.02);
+}
+
+a {
+    text-decoration: none;
+    color: #4a90e2;
+    font-size: 1.1em;
+    margin-right: 10px;
+    display: inline-flex;
+    align-items: center;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #357ab8;
+}
+
+a i {
+    margin-right: 5px;
+}
+
+/* Кнопка удаления */
+.delete {
+    background-color: #ff4d4f;
+    color: #fff;
+    padding: 5px 10px;
+    font-size: 0.9em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.delete:hover {
+    background-color: #e33b3e;
+}
+
+/* Текущий пользователь */
+#currentUser {
+    font-size: 1.2em;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+/* Стили для темной темы */
+body.dark-theme {
+    background-color: #333;
+    color: #f4f4f9;
+}
+
+/* Темная тема: кнопки */
+body.dark-theme button,
+body.dark-theme .file-label {
+    background-color: #1e2a47;
+    color: #f4f4f9;
+}
+
+body.dark-theme .file-label:hover {
+    background-color: #0e1f3d;
+}
+
+/* Темная тема: текущий пользователь */
+body.dark-theme #currentUser {
+    color: #f4f4f9;
+}
+
+/* Темная тема: список файлов */
+body.dark-theme #fileList li {
+    background-color: #444;
+    color: #fff;
+}
+
+body.dark-theme #fileList a {
+    color: #a7c0f7;
+}
+
+body.dark-theme .delete {
+    background-color: #ff1a1a;
+}
+
+body.dark-theme .delete:hover {
+    background-color: #e33b3e;
+}
+
+/* Темная тема: Заголовок списка файлов */
+body.dark-theme #fileListHeader {
+    color: #f4f4f9; /* Белый цвет для текста в тёмной теме */
+}
+
+/* Скрытый класс */
+.hidden {
+    display: none; /* Применим display: none, чтобы иконка не занимала место */
+}
+
+/* Кнопка переключения тем */
+#themeToggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: transparent;
+    border: none;
+    font-size: 24px;
+    color: #4a90e2;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Иконка солнца */
+#themeToggle .fa-sun {
+    color: #ffcb00;
+    font-size: 24px;
+    display: inline-block; /* По умолчанию показываем иконку солнца */
+}
+
+/* Иконка луны */
+#themeToggle .fa-moon {
+    color: #fff;
+    font-size: 24px;
+    display: none;  /* Изначально скрыта */
+}
+
+/* В темной теме скрываем солнце и показываем луну */
+body.dark-theme #themeToggle .fa-sun {
+    display: none; /* Скрыть солнце в тёмной теме */
+}
+
+body.dark-theme #themeToggle .fa-moon {
+    display: inline-block; /* Показываем луну в тёмной теме */
+}
